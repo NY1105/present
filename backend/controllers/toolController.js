@@ -1,44 +1,75 @@
-const Workout = require('../models/toolModel.js')
+const Tool = require('../models/toolModel.js')
 const mongoose = require('mongoose')
 
 const getAllTool = async (req,res) => {
-    if (0) {
-        res.status(404).json({error:""})
-    } 
-    const tool = {}
+    
+    const workouts = await Tool.find({}).sort({ createdAt: -1 })
     res.status(200).json(allTool)
 }
 
 const getTool = async (req,res) => {
-    if (0) {
-        res.status(404).json({error:""})
-    } 
-    const tool = {}
-    res.status(200).json(tool)
+    const { id } = req.params
+	if (!mongoose.Types.ObjectId.isValid(id)) {
+		return res.status(404).json({ error: 'No such tool' })
+	}
+
+	const tool = await Tool.findById(id)
+	if (!tool) {
+		return res.status(404).json({ error: 'No such tool' })
+	}
+	res.status(200).json(tool)
 }
 
 const createTool = async (req,res) => {
-    if (0) {
-        res.status(404).json({error:""})
-    } 
-    const tool = {}
-    res.status(200).json(tool)
+
+    const { /*body*/ } = req.body
+
+	let emptyFields = []
+	if (!1/*body*/) { // any attribute empty
+		emptyFields.push('title')
+	}
+	if (emptyFields.length > 0) {
+		return res
+			.status(400)
+			.json({ error: 'Please fill in all the fields', emptyFields })
+	}
+
+
+    try {
+		const tool = await Tool.create({ /*body*/ })
+		res.status(200).json(tool)
+	} catch (error) {
+		res.status(400).json({ error: error.message })
+	}
 }
 
 const deleteTool = async (req,res) => {
-    if (0) {
-        res.status(404).json({error:""})
-    } 
-    const tool = {}
-    res.status(200).json(tool)
+    const { id } = req.params
+	if (!mongoose.Types.ObjectId.isValid(id)) {
+		return res.status(404).json({ error: 'No such tool' })
+	}
+	const tool = await Tool.findOneAndDelete({ _id: id })
+	if (!tool) {
+		return res.status(404).json({ error: 'No such tool' })
+	}
+	res.status(200).json(tool)
 }
 
 const updateTool = async (req,res) => {
-    if (0) {
-        res.status(404).json({error:""})
-    } 
-    const tool = {}
-    res.status(200).json(tool)
+    const { id } = req.params
+	if (!mongoose.Types.ObjectId.isValid(id)) {
+		return res.status(404).json({ error: 'No such tool' })
+	}
+	const tool = await Workout.findOneAndUpdate(
+		{ _id: id },
+		{
+			...req.body,
+		}
+	)
+	if (!tool) {
+		return res.status(404).json({ error: 'No such tool' })
+	}
+	res.status(200).json(tool)
 }
 
 

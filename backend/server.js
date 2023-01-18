@@ -2,6 +2,7 @@ require('dotenv').config({ path: './.env' })
 
 const express = require('express')
 const mongoose = require('mongoose')
+const toolsRoutes = require('./routes/toolsRoutes')
 
 const app = express()
 app.use((req, res, next) => {
@@ -10,7 +11,7 @@ app.use((req, res, next) => {
 })
 
 app.use(express.json())
-app.use('/api/software/', softwareRoutes)
+app.use('/api/tools/', toolsRoutes)
 
 mongoose.set('strictQuery', false)
 mongoose

@@ -37,7 +37,7 @@ const toolSchema = new Schema(
 	{ timestamps: true }
 )
 
-userSchema.path('appOfficialSiteURL').validate((val) => {
+toolSchema.path('appOfficialSiteURL').validate((val) => {
 	urlRegex =
 		/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/
 	return urlRegex.test(val)
