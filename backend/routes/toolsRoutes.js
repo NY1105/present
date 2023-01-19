@@ -6,15 +6,16 @@ const {
 	deleteTool,
 	updateTool,
 } = require('../controllers/toolController')
-// const requireAuth = require('../middleware/requireAuth')
+const requireAuth = require('../middleware/requireAuth')
 
 const router = express.Router()
 
-// router.use(requireAuth)
 
 router.get('/', getAllTool)
 
 router.get('/:id', getTool)
+
+router.use(requireAuth)
 
 router.post('/', createTool)
 
