@@ -1,14 +1,13 @@
 const Tool = require('../models/toolModel.js')
 const mongoose = require('mongoose')
 
-const getAllTool = async (req,res) => {
-    
-    const workouts = await Tool.find({}).sort({ createdAt: -1 })
-    res.status(200).json(allTool)
+const getAllTool = async (req, res) => {
+	const allTool = await Tool.find({}).sort({ createdAt: -1 })
+	res.status(200).json(allTool)
 }
 
-const getTool = async (req,res) => {
-    const { id } = req.params
+const getTool = async (req, res) => {
+	const { id } = req.params
 	if (!mongoose.Types.ObjectId.isValid(id)) {
 		return res.status(404).json({ error: 'No such tool' })
 	}
@@ -20,13 +19,13 @@ const getTool = async (req,res) => {
 	res.status(200).json(tool)
 }
 
-const createTool = async (req,res) => {
-
-    const { /*body*/ } = req.body
+const createTool = async (req, res) => {
+	const { appName } = req.body
 
 	let emptyFields = []
-	if (!1/*body*/) { // any attribute empty
-		emptyFields.push('title')
+	// any attribute required
+	if (!appName) {
+		emptyFields.push('appName')
 	}
 	if (emptyFields.length > 0) {
 		return res
@@ -34,17 +33,19 @@ const createTool = async (req,res) => {
 			.json({ error: 'Please fill in all the fields', emptyFields })
 	}
 
-
-    try {
-		const tool = await Tool.create({ /*body*/ })
+	try {
+		const tool = await Tool.create({
+			appName: appName,
+			...req.body
+		})
 		res.status(200).json(tool)
 	} catch (error) {
 		res.status(400).json({ error: error.message })
 	}
 }
 
-const deleteTool = async (req,res) => {
-    const { id } = req.params
+const deleteTool = async (req, res) => {
+	const { id } = req.params
 	if (!mongoose.Types.ObjectId.isValid(id)) {
 		return res.status(404).json({ error: 'No such tool' })
 	}
@@ -55,8 +56,8 @@ const deleteTool = async (req,res) => {
 	res.status(200).json(tool)
 }
 
-const updateTool = async (req,res) => {
-    const { id } = req.params
+const updateTool = async (req, res) => {
+	const { id } = req.params
 	if (!mongoose.Types.ObjectId.isValid(id)) {
 		return res.status(404).json({ error: 'No such tool' })
 	}
@@ -72,11 +73,10 @@ const updateTool = async (req,res) => {
 	res.status(200).json(tool)
 }
 
-
 module.exports = {
-    getAllTool,
-    getTool,
-    createTool,
-    deleteTool,
-    updateTool,
+	getAllTool,
+	getTool,
+	createTool,
+	deleteTool,
+	updateTool,
 }

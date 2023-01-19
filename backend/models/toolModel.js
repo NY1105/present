@@ -10,11 +10,9 @@ const toolSchema = new Schema(
 		},
 		appProviderName: {
 			type: String,
-			required: true,
 		},
 		appOfficialSiteURL: {
 			type: String,
-			required: true,
 		},
 		appTags: [String],
 		appDescription: {
@@ -31,7 +29,7 @@ const toolSchema = new Schema(
 		},
 		createdBy: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 	},
 	{ timestamps: true }
