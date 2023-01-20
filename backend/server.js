@@ -3,6 +3,7 @@ require('dotenv').config({ path: './.env' })
 const express = require('express')
 const mongoose = require('mongoose')
 const toolsRoutes = require('./routes/toolsRoutes')
+const usersRoutes = require('./routes/usersRoutes')
 
 const app = express()
 app.use((req, res, next) => {
@@ -11,6 +12,7 @@ app.use((req, res, next) => {
 })
 
 app.use(express.json())
+app.use('/api/user/', usersRoutes)
 app.use('/api/tools/', toolsRoutes)
 
 mongoose.set('strictQuery', false)
