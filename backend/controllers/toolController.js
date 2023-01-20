@@ -1,8 +1,9 @@
 const Tool = require('../models/toolModel.js')
+const User = require('../models/userModel.js')
 const mongoose = require('mongoose')
 
 const getAllTool = async (req, res) => {
-	const allTool = await Tool.find({}).sort({ createdAt: -1 })
+	const allTool = await Tool.find({}).sort({ nSaved: -1 })
 	res.status(200).json(allTool)
 }
 
@@ -35,9 +36,10 @@ const createTool = async (req, res) => {
 
 	try {
 		const user_id = req.user._id
+		const user_name = await User.findById(user_id).select({_id:0, email:1})
 		const tool = await Tool.create({
 			appName: appName,
-			createdBy: user_id,
+			createdBy: user_name,
 			...req.body,
 		})
 		res.status(200).json(tool)
