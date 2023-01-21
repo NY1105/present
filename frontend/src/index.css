@@ -47,7 +47,7 @@ header a {
   gap: 100px;
 }
 
-.tool-details {
+.tool-preview {
   background: #fff;
   background: #656565;
   border-radius: 4px;
@@ -57,20 +57,20 @@ header a {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.tool-details h3 {
+.tool-preview h3 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
 
-.tool-details p {
+.tool-preview p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
   color: #000;
 }
 
-.tool-details span {
+.tool-preview span {
   position: absolute;
   top: 20px;
   right: 20px;

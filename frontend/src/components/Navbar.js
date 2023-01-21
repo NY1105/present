@@ -13,12 +13,15 @@ const Navbar = () => {
 		<header>
 			<div className="container">
 				<Link to="/">
+					{/* TODO: Add app icon */}
 					<h1>Text Management Site</h1>
 				</Link>
 				<nav>
 					{user && (
 						<div>
-							<span>{user.email}</span>
+							{/* TODO: Display Username instead of email */}
+							{/* Link to user page */}
+							<span>{user.email}</span> 
 							<button onClick={handleClick}>Log out</button>
 						</div>
 					)}

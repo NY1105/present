@@ -1,7 +1,7 @@
 import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
-const ToolDetails = ({ tool }) => {
+const ToolPreview = ({ tool }) => {
 	const { dispatch } = useToolsContext()
 	const { user } = useAuthContext()
 	const handleClick = async () => {
@@ -20,7 +20,8 @@ const ToolDetails = ({ tool }) => {
 		}
 	}
 	return (
-		<div className="tool-details">
+		<div className="tool-preview">
+			{/* TODO: Display necessary info */}
 			<h3>{tool.appName}</h3>
 			<p>{tool.appProviderName}</p>
 			<p>
@@ -31,10 +32,11 @@ const ToolDetails = ({ tool }) => {
 				<strong>Created By: </strong>
 				{tool.createdBy}
 			</p>
+			{/* TODO: Add button for detailed info */}
             <span className="material-symbols-outlined" onClick={handleClick}>
 				delete
 			</span>
 		</div>
 	)
 }
-export default ToolDetails
+export default ToolPreview

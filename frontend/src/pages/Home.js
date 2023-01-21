@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
-import ToolDetails from '../components/ToolDetails'
+import ToolPreview from '../components/ToolPreview'
 import ToolForm from '../components/ToolForm'
 
 const Home = () => {
@@ -25,7 +25,7 @@ const Home = () => {
 		<div className="home">
 			<div className="tools">
 				{tools &&
-					tools.map((tool) => <ToolDetails key={tool._id} tool={tool} />)}
+					tools.map((tool) => <ToolPreview key={tool._id} tool={tool} />)}
 			</div>
 			<ToolForm />
 		</div>

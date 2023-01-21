@@ -6,9 +6,10 @@ const ToolForm = () => {
 	const { dispatch } = useToolsContext()
 	const { user } = useAuthContext()
 	
+	// const [attr, setAttr] = useState('')
+	// TODO: Add all required attributes
 	const [appName, setAppName] = useState('')
 
-	// const [attr, setAttr] = useState('')
 	const [error, setError] = useState(null)
 	const [emptyFields, setEmptyFields] = useState([])
 

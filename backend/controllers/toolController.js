@@ -36,11 +36,11 @@ const createTool = async (req, res) => {
 
 	try {
 		const user_id = req.user._id
-		const user_name = await User.findById(user_id).select({_id:0, email:1})
+		const user_name = await User.findById(user_id).select({ _id: 0, email: 1 }) //TODO: Format Output 
 		const tool = await Tool.create({
 			appName: appName,
 			createdBy: user_name,
-			...req.body,
+			...req.body, //TODO: Add necessary attributes
 		})
 		res.status(200).json(tool)
 	} catch (error) {

@@ -14,6 +14,7 @@ const userSchema = new Schema({
 		type: String,
 		require: true,
 	},
+	//TODO: Add username attribute
 })
 
 userSchema.statics.signupUser = async function (email, password) {

@@ -7,9 +7,10 @@ const tagSchema = new Schema({
 		type: String,
 		required: true,
 	},
-    nApps: {
-        type: Number,
-    }
+	nApps: {
+		type: Number,
+	},
+	//TODO: Add contained apps
 })
 
 module.exports = mongoose.model('Tags', tagSchema)

@@ -7,7 +7,7 @@ const createToken = (_id) => {
 
 // login
 const loginUser = async (req, res) => {
-	const { email, password } = req.body
+	const { email, password } = req.body //TODO: Add username attribute
 	try {
 		const user = await User.loginUser(email, password)
 		const token = createToken(user._id)
