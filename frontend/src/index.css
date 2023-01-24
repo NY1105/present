@@ -103,6 +103,8 @@ form button{
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+  display: inline;
+  margin: 0 auto;
 }
 
 div.error{
@@ -138,10 +140,48 @@ nav button {
   margin-left: 10px;
 }
 /* auth forms */
-form.signup, form.login {
+form.signup, form.login  {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
   background: #fff;
   border-radius: 4px;
+}
+
+form.create {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.buttons {
+  width: 200px;
+  margin: 0 auto;
+  display: inline;
+}
+
+div.action button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline;
+  margin: 0 auto;
+}
+
+div.action button.logout {
+  background: var(--error);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline;
+  margin: 0 auto;
 }

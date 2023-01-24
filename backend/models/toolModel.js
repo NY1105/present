@@ -14,7 +14,7 @@ const toolSchema = new Schema(
 		appOfficialSiteURL: {
 			type: String,
 		},
-		appTags: [String], //TODO: Change to store [ObjectId]
+		appTags: [String], 
 		appDescription: {
 			type: String,
 		},

@@ -4,7 +4,8 @@ import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 import ToolPreview from '../components/ToolPreview'
-import ToolForm from '../components/ToolForm'
+import Panel from '../components/Panel'
+// import ToolForm from '../components/ToolForm'
 
 const Home = () => {
 	const { tools, dispatch } = useToolsContext()
@@ -27,7 +28,7 @@ const Home = () => {
 				{tools &&
 					tools.map((tool) => <ToolPreview key={tool._id} tool={tool} />)}
 			</div>
-			<ToolForm />
+			<Panel />
 		</div>
 	)
 }
