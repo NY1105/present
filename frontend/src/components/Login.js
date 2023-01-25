@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useLogin } from '../hooks/useLogin'
+import { usePanelContext } from '../hooks/usePanelContext'
 
 const Login = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const { login, isLoading, error } = useLogin()
+	const { page, dispatch: panelDispatch } = usePanelContext()
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		await login(email, password)
+	}
+
+	const handleGoto = () => {
+		panelDispatch({ type: 'SIGNUP_PANEL' })
 	}
 
 	return (
@@ -17,7 +23,9 @@ const Login = () => {
 			<h3>Log In</h3>
 
 			<div align="right">
-				<Link align="right" to="/">Sign Up</Link>
+				<Link align="right" to="/" onClick={handleGoto}>
+					Sign Up
+				</Link>
 			</div>
 
 			<label>Email:</label>
@@ -32,11 +40,13 @@ const Login = () => {
 				onChange={(e) => setPassword(e.target.value)}
 				value={password}
 			/>
-			
-			<button disabled={isLoading}>Log In</button>
 
-			{error && <div className='error'>{error}</div>}
-			<button onClick={()=> {setEmail("admin@present.com");setPassword("123123ABCabc!")}} disabled={isLoading}>Log In as Guess</button>
+			<button className="buttons" disabled={isLoading}>
+				Log In
+			</button>
+			<button onClick={()=> {setEmail("admin@present.com");setPassword("123123ABCabc!")}} disabled={isLoading}>Log In as Guest</button>
+
+			{error && <div className="error">{error}</div>}
 		</form>
 	)
 }

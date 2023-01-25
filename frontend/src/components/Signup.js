@@ -1,19 +1,31 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useSignup } from '../hooks/useSignup'
+import { usePanelContext } from '../hooks/usePanelContext'
 
 const Signup = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const { signup, isLoading, error } = useSignup()
+	const { page, dispatch: panelDispatch } = usePanelContext()
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		await signup(email, password)
 	}
 
+	const handleGoto = () => {
+		panelDispatch({ type: 'LOGIN_PANEL' })
+	}
+
 	return (
 		<form className="signup" onSubmit={handleSubmit}>
 			<h3>Sign Up</h3>
+			<div align="right">
+				<Link align="right" to="/" onClick={handleGoto}>
+					Log In
+				</Link>
+			</div>
 			<label>Email:</label>
 			<input
 				type="email"

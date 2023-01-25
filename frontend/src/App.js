@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Tags from './pages/Tags'
+import About from './pages/About'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/tags" element={<Tags />} />
+						<Route path="/about" element={<About />} />
 					</Routes>
 				</div>
 			</BrowserRouter>

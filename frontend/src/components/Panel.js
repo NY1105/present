@@ -1,18 +1,31 @@
-import { usePanelContext } from '../hooks/usePanelContext'
-import { useAuthContext } from '../hooks/useAuthContext'
+import Login from './Login'
+import Signup from './Signup'
+import Actions from './Actions'
 import { useEffect, useState } from 'react'
-import Form from './ToolForm'
+import { useAuthContext } from '../hooks/useAuthContext'
+import { usePanelContext } from '../hooks/usePanelContext'
 
-// import Signup from './Signup'
-// import { useLogout } from '../hooks/useLogout'
-const Panel = () => {
-	const [panel, setPanel] = useState(<Form />)
-
+export const Panel = () => {
+	const { page, dispatch } = usePanelContext()
 	const { user } = useAuthContext()
-	// const { panel,dispatch } = usePanelContext()
 
-	return (
-        {panel}
-    )
+	useEffect(() => {
+		if (user) {
+			dispatch({type:'ACTIONS_PANEL'})
+		}
+		if (!user) {
+			dispatch({type:'LOGIN_PANEL'})
+		}
+	}, [dispatch, user])
+
+	switch (page) {
+		case 'Signup':
+			console.log('p')
+			return <Signup />
+		case 'Login':
+			return <Login />
+		case 'Actions':
+			return <Actions />
+	}
 }
 export default Panel

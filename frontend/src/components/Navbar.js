@@ -14,8 +14,9 @@ const Navbar = () => {
 				<nav>
 					<div>
 						<Link to="/">Home</Link>
-						<Link to="/form">Form</Link>
+						{/* <Link to="/form">Form</Link> */}
 						<Link to="/tags">Tags</Link>
+						<Link to="/about">About</Link>
 					</div>
 				</nav>
 
