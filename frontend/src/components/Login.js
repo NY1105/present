@@ -20,8 +20,6 @@ const Login = () => {
 				<Link align="right" to="/">Sign Up</Link>
 			</div>
 
-			<label>admin@present.com</label>
-			<label>123123ABCabc!</label>
 			<label>Email:</label>
 			<input
 				type="email"
@@ -36,7 +34,9 @@ const Login = () => {
 			/>
 			
 			<button disabled={isLoading}>Log In</button>
+
 			{error && <div className='error'>{error}</div>}
+			<button onClick={()=> {setEmail("admin@present.com");setPassword("123123ABCabc!")}} disabled={isLoading}>Log In as Guess</button>
 		</form>
 	)
 }

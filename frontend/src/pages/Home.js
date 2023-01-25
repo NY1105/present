@@ -5,7 +5,6 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 import ToolPreview from '../components/ToolPreview'
 import Panel from '../components/Panel'
-// import ToolForm from '../components/ToolForm'
 
 const Home = () => {
 	const { tools, dispatch } = useToolsContext()
