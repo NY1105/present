@@ -1,18 +1,18 @@
-import Login from './Login'
-import Actions from './Actions'
-import ToolForm from './ToolForm'
+import { usePanelContext } from '../hooks/usePanelContext'
 import { useAuthContext } from '../hooks/useAuthContext'
+import { useEffect, useState } from 'react'
+import Form from './ToolForm'
 
 // import Signup from './Signup'
 // import { useLogout } from '../hooks/useLogout'
-// import { useAuthContext } from '../hooks/useAuthContext'
 const Panel = () => {
-	const { user } = useAuthContext()
+	const [panel, setPanel] = useState(<Form />)
 
-    return (
-        <div>
-            {!user ? <Login />: <Actions/>}
-        </div>
+	const { user } = useAuthContext()
+	// const { panel,dispatch } = usePanelContext()
+
+	return (
+        {panel}
     )
 }
 export default Panel

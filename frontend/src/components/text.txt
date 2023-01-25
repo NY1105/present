@@ -1,0 +1,31 @@
+react-dom.development.js:86 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+    at Panel (http://localhost:3000/static/js/bundle.js:539:78)
+    at div
+    at Home (http://localhost:3000/static/js/bundle.js:1945:78)
+    at RenderedRoute (http://localhost:3000/static/js/bundle.js:40603:5)
+    at Routes (http://localhost:3000/static/js/bundle.js:41069:5)
+    at div
+    at Router (http://localhost:3000/static/js/bundle.js:41007:15)
+    at BrowserRouter (http://localhost:3000/static/js/bundle.js:39261:5)
+    at div
+    at App
+    at ToolsContextProvider (http://localhost:3000/static/js/bundle.js:1296:5)
+    at PanelContextProvider (http://localhost:3000/static/js/bundle.js:1195:5)
+    at AuthContextProvider (http://localhost:3000/static/js/bundle.js:1076:5)
+printWarning @ react-dom.development.js:86
+error @ react-dom.development.js:60
+checkForNestedUpdates @ react-dom.development.js:27300
+scheduleUpdateOnFiber @ react-dom.development.js:25475
+dispatchReducerAction @ react-dom.development.js:17452
+(anonymous) @ Panel.js:13
+commitHookEffectListMount @ react-dom.development.js:23150
+commitPassiveMountOnFiber @ react-dom.development.js:24926
+commitPassiveMountEffects_complete @ react-dom.development.js:24891
+commitPassiveMountEffects_begin @ react-dom.development.js:24878
+commitPassiveMountEffects @ react-dom.development.js:24866
+flushPassiveEffectsImpl @ react-dom.development.js:27039
+flushPassiveEffects @ react-dom.development.js:26984
+(anonymous) @ react-dom.development.js:26769
+workLoop @ scheduler.development.js:266
+flushWork @ scheduler.development.js:239
+performWorkUntilDeadline @ scheduler.development.js:533
