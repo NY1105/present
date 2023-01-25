@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
+import { usePanelContext } from '../hooks/usePanelContext'
 
 const ToolForm = () => {
 	const { dispatch } = useToolsContext()
 	const { user } = useAuthContext()
+	const { page, dispatch: panelDispatch } = usePanelContext()
 	
 	// const [attr, setAttr] = useState('')
 	// TODO: Add all required attributes
@@ -47,8 +50,18 @@ const ToolForm = () => {
 		}
 	}
 
+	const handleGoBack = () => {
+		panelDispatch({ type: 'ACTIONS_PANEL' })
+	}
+
 	return (
 		<form className="create" onSubmit={handleSubmit}>
+			<div align="right">
+				<Link align="right" to="/" onClick={handleGoBack}>
+					Back
+				</Link>
+			</div>
+
 			<h3>Add a new Tool</h3>
 
 			<label>AppName: </label>

@@ -149,7 +149,14 @@ form.signup, form.login, form.create {
   border-radius: 4px;
 }
 
-
+div.action {
+  max-width: 400px;
+  margin: 40px ;
+  margin-left: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
 
 .buttons {
   margin: 0 auto;
@@ -179,4 +186,12 @@ div.action button.logout {
   cursor: pointer;
   display: inline;
   margin: 0 auto;
+}
+
+div.action button.link {
+  background:none;
+  border:none; 
+  color: #000;
+  text-decoration: underline;
+  font-size: medium;
 }
