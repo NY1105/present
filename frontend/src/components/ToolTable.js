@@ -45,11 +45,11 @@ const ToolsTable = ({ data }) => {
 				header: 'Description',
 				size: 250,
 			},
-			{
-				accessorKey: 'nSaved',
-				header: 'Number of Saved',
-				size: 15,
-			},
+			// {
+			// 	accessorKey: 'nSaved',
+			// 	header: 'Number of Saved',
+			// 	size: 15,
+			// },
 		],
 		[]
 	)

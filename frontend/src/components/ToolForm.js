@@ -8,16 +8,19 @@ const ToolForm = () => {
 	const { dispatch } = useToolsContext()
 	const { user } = useAuthContext()
 	const { dispatch: panelDispatch } = usePanelContext()
-	
+
 	// const [attr, setAttr] = useState('')
 	// TODO: Add all required attributes
-	const [appName, setAppName] = useState('')
 	const [createdBy] = useState(user.username)
+	const [appName, setAppName] = useState('')
+	const [appProviderName, setAppProviderName] = useState('')
+	const [appOfficialSiteURL, setAppOfficialSiteURL] = useState('')
+	const [appDescription, setAppDescription] = useState('')
+	const [appLogo, setAppLogo] = useState('')
+	const [nSaved, setNSaved] = useState('')
 
-	
 	const [error, setError] = useState(null)
 	const [emptyFields, setEmptyFields] = useState([])
-
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
@@ -25,9 +28,16 @@ const ToolForm = () => {
 			setError('You must be logged in')
 			return
 		}
-		
 
-		const tool = { appName, createdBy }
+		const tool = {
+			appName,
+			createdBy,
+			appProviderName,
+			appOfficialSiteURL,
+			appDescription,
+			appLogo,
+			nSaved,
+		}
 
 		const response = await fetch('/api/tools/', {
 			method: 'POST',
@@ -43,14 +53,19 @@ const ToolForm = () => {
 			setError(json.error)
 			setEmptyFields(json.emptyFields)
 		}
-		if (response.ok){
+		if (response.ok) {
 			setAppName('')
+			setAppProviderName('')
+			setAppOfficialSiteURL('')
+			setAppDescription('')
+			setAppLogo('')
+			setNSaved(null)
+
 			setError(null)
 			setEmptyFields([])
 
 			console.log('new Tool added', json)
 			dispatch({ type: 'CREATE_TOOL', payload: json })
-
 		}
 	}
 
@@ -76,8 +91,36 @@ const ToolForm = () => {
 				className={emptyFields.includes('appName') ? 'error' : ''}
 			/>
 
-            <button>Add Tool</button>
-            {error && <div className='error'>{error}</div>}
+			<label>Provider: </label>
+			<input
+				type="text"
+				onChange={(e) => setAppProviderName(e.target.value)}
+				value={appProviderName}
+			/>
+
+			<label>appOfficialSiteURL: </label>
+			<input
+				type="text"
+				onChange={(e) => setAppOfficialSiteURL(e.target.value)}
+				value={appOfficialSiteURL}
+			/>
+
+			<label>appDescription: </label>
+			<input
+				type="text"
+				onChange={(e) => setAppDescription(e.target.value)}
+				value={appDescription}
+			/>
+
+			<label>appLogo: </label>
+			<input
+				type="text"
+				onChange={(e) => setAppLogo(e.target.value)}
+				value={appLogo}
+			/>
+
+			<button>Add Tool</button>
+			{error && <div className="error">{error}</div>}
 		</form>
 	)
 }

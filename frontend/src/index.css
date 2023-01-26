@@ -125,9 +125,10 @@ nav {
   display: flex;
   align-items: center;
   font-size: large;
+  text-decoration: underline;
 }
 nav a {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 nav button {
   background: #fff;
