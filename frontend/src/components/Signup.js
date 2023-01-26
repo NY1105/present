@@ -6,6 +6,7 @@ import { usePanelContext } from '../hooks/usePanelContext'
 const Signup = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+	const [username, setUsername] = useState('')
 	const { signup, isLoading, error } = useSignup()
 	const { page, dispatch: panelDispatch } = usePanelContext()
 
@@ -31,6 +32,12 @@ const Signup = () => {
 				type="email"
 				onChange={(e) => setEmail(e.target.value)}
 				value={email}
+			/>
+			<label>Username:</label>
+			<input
+				type="username"
+				onChange={(e) => setUsername(e.target.value)}
+				value={username}
 			/>
 			<label>Password:</label>
 			<input

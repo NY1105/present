@@ -16,9 +16,10 @@ const Actions = () => {
 
 	return (
 		<div className="action">
-			<h3>{user && user.email}</h3>
+			<h3>{user && user.username}</h3> 
+			{/* TODO: username */}
 			<div>
-				<button onClick={handleGoto} class="link">Add a new Tool</button>
+				<button onClick={handleGoto} className="link">Add a new Tool</button>
 			</div>
 			<button className="logout" onClick={handleLogout}>
 				Logout

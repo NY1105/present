@@ -14,15 +14,12 @@ const Navbar = () => {
 				<nav>
 					<div>
 						<Link to="/">Home</Link>
-						{/* <Link to="/form">Form</Link> */}
 						<Link to="/tags">Tags</Link>
 						<Link to="/about">About</Link>
 					</div>
 				</nav>
 
-				
-				{/* TODO: Display Username instead of email */}
-				{/* Link to user page */}
+				 
 				
 			</div>
 		</header>
