@@ -31,4 +31,6 @@ const signupUser = async (req, res) => {
 	}
 }
 
+// TODO: user manipulation
+
 module.exports = { loginUser, signupUser }

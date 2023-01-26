@@ -129,6 +129,7 @@ const ToolsTable = ({ data }) => {
 				>
 					<Typography>
 						Official Site: {row.original.appOfficialSiteURL}
+						{/* TODO: click to copy */}
 					</Typography>
 					<Typography>Created By: {row.original.createdBy}</Typography>
 					{/* <Typography>Tags: {row.original.appTags}</Typography> */}

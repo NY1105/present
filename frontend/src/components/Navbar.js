@@ -17,6 +17,7 @@ const Navbar = () => {
 						{/* <Link to="/tags">Tags</Link> */}
 						<Link to="/about">About</Link>
 						<ExternalLink href="https://github.com/NY1105/present"><span>Github</span></ExternalLink>
+						{/* TODO: Upload CV */}
 					</div>
 				</nav>
 			</div>

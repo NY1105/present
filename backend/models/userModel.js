@@ -19,6 +19,7 @@ const userSchema = new Schema({
 		type: String,
 		require: true,
 	},
+	// TODO: ranking or op level
 })
 
 userSchema.statics.signupUser = async function (email, username, password) {

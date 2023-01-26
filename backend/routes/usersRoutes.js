@@ -11,4 +11,6 @@ router.post('/login', loginUser)
 // signup route
 router.post('/signup', signupUser)
 
+// TODO: user manipulation
+
 module.exports = router
