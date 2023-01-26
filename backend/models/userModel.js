@@ -23,6 +23,15 @@ const userSchema = new Schema({
 
 userSchema.statics.signupUser = async function (email, username, password) {
 	if (!username || !email || !password) {
+		if (!username){
+			throw Error('username')
+		}
+		if (!email){
+			throw Error('email')
+		}
+		if (!password){
+			throw Error('password')
+		}
 		throw Error('Fill in all required fields')
 	}
 	if (!validator.isEmail(email)) {

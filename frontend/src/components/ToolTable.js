@@ -1,10 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import MaterialReactTable from 'material-react-table'
-import {
-	Box,
-	Typography,
-	MenuItem,
-} from '@mui/material'
+import { Box, Typography, MenuItem } from '@mui/material'
 import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
@@ -78,7 +74,7 @@ const ToolsTable = ({ data }) => {
 			// ) {
 			// 	return
 			// }
-            // console.log()
+			// console.log()
 			deleteTool(row.row.original._id)
 			tableData.splice(row.index, 1)
 			setTableData([...tableData])
@@ -136,6 +132,11 @@ const ToolsTable = ({ data }) => {
 					</Typography>
 					<Typography>Created By: {row.original.createdBy}</Typography>
 					{/* <Typography>Tags: {row.original.appTags}</Typography> */}
+				</Box>
+			)}
+			renderTopToolbarCustomActions={() => (
+				<Box>
+					<h1>Tools that I used to build this website:</h1>
 				</Box>
 			)}
 		/>

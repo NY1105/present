@@ -21,7 +21,6 @@ export const Panel = () => {
 
 	switch (page) {
 		case 'Signup':
-			console.log('p')
 			return <Signup />
 		case 'Login':
 			return <Login />

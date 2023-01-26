@@ -44,7 +44,7 @@ const Login = () => {
 			<button className="buttons" disabled={isLoading}>
 				Log In
 			</button>
-			<button onClick={()=> {setEmail("admin@present.com");setPassword("123123ABCabc!")}} disabled={isLoading}>Log In as Guest</button>
+			<button onClick={()=> {setEmail("guest@example.com");setPassword("Guest0!!")}} disabled={isLoading}>Log In as Guest</button>
 
 			{error && <div className="error">{error}</div>}
 		</form>
