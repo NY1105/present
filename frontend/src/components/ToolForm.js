@@ -7,14 +7,17 @@ import { usePanelContext } from '../hooks/usePanelContext'
 const ToolForm = () => {
 	const { dispatch } = useToolsContext()
 	const { user } = useAuthContext()
-	const { page, dispatch: panelDispatch } = usePanelContext()
+	const { dispatch: panelDispatch } = usePanelContext()
 	
 	// const [attr, setAttr] = useState('')
 	// TODO: Add all required attributes
 	const [appName, setAppName] = useState('')
+	const [createdBy, setCreatedBy] = useState(user.username)
 
+	
 	const [error, setError] = useState(null)
 	const [emptyFields, setEmptyFields] = useState([])
+
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
@@ -22,8 +25,9 @@ const ToolForm = () => {
 			setError('You must be logged in')
 			return
 		}
+		
 
-		const tool = { appName }
+		const tool = { appName, createdBy }
 
 		const response = await fetch('/api/tools/', {
 			method: 'POST',
@@ -41,6 +45,7 @@ const ToolForm = () => {
 		}
 		if (response.ok){
 			setAppName('')
+			// setCreatedBy('')
 			setError(null)
 			setEmptyFields([])
 

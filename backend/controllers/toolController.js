@@ -1,5 +1,4 @@
 const Tool = require('../models/toolModel.js')
-const User = require('../models/userModel.js')
 const mongoose = require('mongoose')
 
 const getAllTool = async (req, res) => {
@@ -21,12 +20,16 @@ const getTool = async (req, res) => {
 }
 
 const createTool = async (req, res) => {
-	const { appName } = req.body
+	const { appName, createdBy } = req.body // required fields
 
 	let emptyFields = []
+
 	// any attribute required
 	if (!appName) {
 		emptyFields.push('appName')
+	}
+	if (!createdBy) {
+		emptyFields.push('createdBy')
 	}
 	if (emptyFields.length > 0) {
 		return res
@@ -35,16 +38,10 @@ const createTool = async (req, res) => {
 	}
 
 	try {
-		const user_id = req.user._id
-		const user_name = await User.findById(user_id).select({ _id: 0, email: 1 }) //TODO: Format Output 
-		const tool = await Tool.create({
-			appName: appName,
-			createdBy: user_name,
-			...req.body, //TODO: Add necessary attributes
-		})
+		const tool = await Tool.createNewTool(req)
 		res.status(200).json(tool)
 	} catch (error) {
-		res.status(400).json({ error: error.message })
+		res.status(400).json({ error: error.message, emptyFields })
 	}
 }
 

@@ -124,6 +124,7 @@ input.error {
 nav {
   display: flex;
   align-items: center;
+  font-size: large;
 }
 nav a {
   margin-left: 10px;

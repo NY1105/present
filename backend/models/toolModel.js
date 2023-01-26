@@ -7,6 +7,7 @@ const toolSchema = new Schema(
 		appName: {
 			type: String,
 			required: true,
+			unique: true,
 		},
 		appProviderName: {
 			type: String,
@@ -14,11 +15,14 @@ const toolSchema = new Schema(
 		appOfficialSiteURL: {
 			type: String,
 		},
-		appTags: [String], 
+		appTags: [String],
 		appDescription: {
 			type: String,
 		},
 		appRequirements: {
+			type: String,
+		},
+		appLogo: {
 			type: String,
 		},
 		nVisit: {
@@ -29,7 +33,7 @@ const toolSchema = new Schema(
 		},
 		createdBy: {
 			type: String,
-			// required: true,
+			required: true,
 		},
 	},
 	{ timestamps: true }
@@ -40,5 +44,21 @@ toolSchema.path('appOfficialSiteURL').validate((val) => {
 		/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/
 	return urlRegex.test(val)
 }, 'Invalid URL.')
+
+toolSchema.statics.createNewTool = async function (req) {
+
+	const { appName, createdBy } = req.body // FIXME:
+	
+	const exists_appName = await this.findOne({ appName })
+	if (exists_appName) {
+		throw Error('appName already in use')
+	}
+	const tool = await this.create({
+		appName: appName,
+		createdBy: createdBy,
+		...req.body,
+	})
+	return tool
+}
 
 module.exports = mongoose.model('Tool', toolSchema)

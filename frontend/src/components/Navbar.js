@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
+import { ExternalLink } from 'react-external-link';
 
 const Navbar = () => {
+	
 
-	
-	
 	return (
 		<header>
 			<div className="container">
@@ -14,13 +14,11 @@ const Navbar = () => {
 				<nav>
 					<div>
 						<Link to="/">Home</Link>
-						<Link to="/tags">Tags</Link>
+						{/* <Link to="/tags">Tags</Link> */}
 						<Link to="/about">About</Link>
+						<ExternalLink href="https://github.com/NY1105/present"><span>Github</span></ExternalLink>
 					</div>
 				</nav>
-
-				 
-				
 			</div>
 		</header>
 	)

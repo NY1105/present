@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
-
 import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-
-import ToolPreview from '../components/ToolPreview'
+import ToolTableProvider from '../components/ToolTable'
 import Panel from '../components/Panel'
 
+
 const Home = () => {
+	
 	const { tools, dispatch } = useToolsContext()
 	const { user } = useAuthContext()
 	useEffect(() => {
@@ -23,10 +23,7 @@ const Home = () => {
 
 	return (
 		<div className="home">
-			<div className="tools">
-				{tools &&
-					tools.map((tool) => <ToolPreview key={tool._id} tool={tool} />)}
-			</div>
+			<ToolTableProvider data={tools} />
 			<Panel />
 		</div>
 	)

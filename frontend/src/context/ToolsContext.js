@@ -23,7 +23,7 @@ export const toolsReducer = (state, action) => {
 
 export const ToolsContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(toolsReducer, {
-		tools: null,
+		tools: [],
 	})
 
 	return (
