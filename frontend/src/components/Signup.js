@@ -8,7 +8,7 @@ const Signup = () => {
 	const [password, setPassword] = useState('')
 	const [username, setUsername] = useState('')
 	const { signup, isLoading, error } = useSignup()
-	const { page, dispatch: panelDispatch } = usePanelContext()
+	const { dispatch: panelDispatch } = usePanelContext()
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()

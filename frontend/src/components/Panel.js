@@ -2,7 +2,7 @@ import Login from './Login'
 import Signup from './Signup'
 import Actions from './Actions'
 import ToolForm from './ToolForm'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { usePanelContext } from '../hooks/usePanelContext'
 
@@ -29,6 +29,8 @@ export const Panel = () => {
 			return <Actions />
 		case 'ToolForm':
 			return <ToolForm />
+		default:
+			return null
 	}
 }
 export default Panel

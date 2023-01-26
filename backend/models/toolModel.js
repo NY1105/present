@@ -47,7 +47,7 @@ toolSchema.path('appOfficialSiteURL').validate((val) => {
 
 toolSchema.statics.createNewTool = async function (req) {
 
-	const { appName, createdBy } = req.body // FIXME:
+	const { appName, createdBy } = req.body 
 	
 	const exists_appName = await this.findOne({ appName })
 	if (exists_appName) {

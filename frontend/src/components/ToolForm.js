@@ -12,7 +12,7 @@ const ToolForm = () => {
 	// const [attr, setAttr] = useState('')
 	// TODO: Add all required attributes
 	const [appName, setAppName] = useState('')
-	const [createdBy, setCreatedBy] = useState(user.username)
+	const [createdBy] = useState(user.username)
 
 	
 	const [error, setError] = useState(null)
@@ -45,7 +45,6 @@ const ToolForm = () => {
 		}
 		if (response.ok){
 			setAppName('')
-			// setCreatedBy('')
 			setError(null)
 			setEmptyFields([])
 

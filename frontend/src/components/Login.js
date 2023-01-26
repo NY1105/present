@@ -7,7 +7,7 @@ const Login = () => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const { login, isLoading, error } = useLogin()
-	const { page, dispatch: panelDispatch } = usePanelContext()
+	const { dispatch: panelDispatch } = usePanelContext()
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()

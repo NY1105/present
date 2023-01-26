@@ -5,7 +5,6 @@ import {
 	Typography,
 	MenuItem,
 } from '@mui/material'
-import { Delete, Edit } from '@mui/icons-material'
 import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
@@ -26,7 +25,7 @@ const ToolsTable = ({ data }) => {
 						}}
 					>
 						<img
-							// alt="appLogo"
+							alt="appLogo"
 							height={30}
 							src={row.original.appLogo}
 							loading="lazy"
