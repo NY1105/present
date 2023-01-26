@@ -1,11 +1,8 @@
-
+import React from 'react'
+import AboutMD from '../components/aboutmd'
 
 const About = () => {
-    return (
-        <div className="home">
-            <p>about</p>
-        </div>
-    )
+	return <AboutMD />
 }
 
 export default About

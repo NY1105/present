@@ -196,3 +196,11 @@ div.action button.link {
   text-decoration: underline;
   font-size: medium;
 }
+
+div.readme {
+  margin: 40px ;
+  margin-left: 20px;
+  padding: 20px;
+  background: #656565;
+  border-radius: 4px;
+}

@@ -9,7 +9,7 @@ const Navbar = () => {
 			<div className="container">
 				<Link to="/">
 					{/* TODO: Add app icon */}
-					<h1>Text Management Site</h1>
+					<h1>Tools Management Site</h1>
 				</Link>
 				<nav>
 					<div>
