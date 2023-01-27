@@ -1,2 +1,0 @@
-# present
-software management system
