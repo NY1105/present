@@ -1,4 +1,5 @@
 const Tool = require('../models/toolModel.js')
+const User = require('../models/userModel.js')
 const mongoose = require('mongoose')
 
 const getAllTool = async (req, res) => {
@@ -46,6 +47,11 @@ const createTool = async (req, res) => {
 }
 
 const deleteTool = async (req, res) => {
+	const user_id = req.user._id
+	const role = await User.findOne(user_id).select('role')
+	if (role.role !== 'admin') {
+		return res.status(401).json({ error: 'Unauthorized' })
+	}
 	const { id } = req.params
 	if (!mongoose.Types.ObjectId.isValid(id)) {
 		return res.status(404).json({ error: 'No such tool' })
@@ -58,6 +64,11 @@ const deleteTool = async (req, res) => {
 }
 
 const updateTool = async (req, res) => {
+	const user_id = req.user._id
+	const role = await User.findOne(user_id).select('role')
+	if (role.role !== 'admin') {
+		return res.status(401).json({ error: 'Unauthorized' })
+	}
 	const { id } = req.params
 	if (!mongoose.Types.ObjectId.isValid(id)) {
 		return res.status(404).json({ error: 'No such tool' })
