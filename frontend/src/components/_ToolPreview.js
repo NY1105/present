@@ -8,7 +8,7 @@ const ToolPreview = ({ tool }) => {
 		if (!user) {
 			return
 		}
-		const response = await fetch('/api/tools/' + tool._id, {
+		const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/tools/` + tool._id, {
 			method: 'DELETE',
 			headers: {
 				Authorization: `Bearer ${user.token}`,

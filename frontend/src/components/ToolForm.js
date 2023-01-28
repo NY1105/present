@@ -39,7 +39,7 @@ const ToolForm = () => {
 			nSaved,
 		}
 
-		const response = await fetch('/api/tools/', {
+		const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/tools/`, {
 			method: 'POST',
 			body: JSON.stringify(tool),
 			headers: {

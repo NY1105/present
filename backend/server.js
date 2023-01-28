@@ -4,6 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const toolsRoutes = require('./routes/toolsRoutes')
 const usersRoutes = require('./routes/usersRoutes')
+const cors = require('cors')
 
 const app = express()
 app.use((req, res, next) => {
@@ -11,6 +12,12 @@ app.use((req, res, next) => {
 	next()
 })
 
+app.use(
+	cors({
+		origin: 'https://nicholasyan.site',
+		optionsSuccessStatus: 200,
+	})
+)
 app.use(express.json())
 app.use('/api/user/', usersRoutes)
 app.use('/api/tools/', toolsRoutes)
@@ -24,7 +31,7 @@ mongoose
 			console.log(
 				'connected to db and listening on port',
 				process.env.PORT || 4000
-				)
+			)
 		})
 	})
 	.catch((error) => {
