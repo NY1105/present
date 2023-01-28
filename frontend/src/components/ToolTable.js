@@ -4,7 +4,7 @@ import { Box, Typography, MenuItem } from '@mui/material'
 import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
-const ToolsTable = ({ data }) => {
+const ToolsTable = ({ data, isLoading }) => {
 	const [tableData, setTableData] = useState(() => data)
 	const columns = useMemo(
 		() => [
@@ -56,12 +56,15 @@ const ToolsTable = ({ data }) => {
 		if (!user) {
 			return
 		}
-		const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/tools/` + id, {
-			method: 'DELETE',
-			headers: {
-				Authorization: `Bearer ${user.token}`,
-			},
-		})
+		const response = await fetch(
+			`${process.env.REACT_APP_API_ENDPOINT}/api/tools/` + id,
+			{
+				method: 'DELETE',
+				headers: {
+					Authorization: `Bearer ${user.token}`,
+				},
+			}
+		)
 		const json = await response.json()
 		if (response.ok) {
 			dispatch({ type: 'DELETE_TOOL', payload: json })
@@ -85,7 +88,8 @@ const ToolsTable = ({ data }) => {
 	return (
 		<MaterialReactTable
 			columns={columns}
-			data={data}
+			data={data ?? []}
+			globalFilterFn="contains"
 			enableColumnActions={false}
 			enableHiding={false}
 			enableFullScreenToggle={false}
@@ -93,6 +97,7 @@ const ToolsTable = ({ data }) => {
 			enableDensityToggle={false}
 			enableRowActions
 			positionActionsColumn="last"
+			state={{ isLoading }}
 			renderRowActionMenuItems={(row) => [
 				// <MenuItem onClick={() => console.info('Edit')}>Edit</MenuItem>,
 				<MenuItem
