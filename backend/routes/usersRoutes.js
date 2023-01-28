@@ -3,7 +3,8 @@ const express = require('express')
 const router = express.Router()
 
 // controller
-const { loginUser, signupUser } = require('../controllers/userController')
+const { loginUser, signupUser, updateUser } = require('../controllers/userController')
+const requireAuth = require('../middleware/requireAuth')
 
 // login route
 router.post('/login', loginUser)
@@ -11,6 +12,9 @@ router.post('/login', loginUser)
 // signup route
 router.post('/signup', signupUser)
 
-// TODO: user manipulation
+router.use(requireAuth)
+
+// update route
+router.patch('/update', updateUser)
 
 module.exports = router

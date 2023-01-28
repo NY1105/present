@@ -31,6 +31,17 @@ const signupUser = async (req, res) => {
 	}
 }
 
-// TODO: user manipulation
+// update
+const updateUser = async (req, res) => {
+	const { email, role } = req.body
+	try {
+		const user_id = req.user._id
+		const admin = await User.findOne(user_id)
+		const target = await User.updateUser(email, role, admin.role)
+		res.status(200).json({ email, target })
+	} catch (error) {
+		res.status(400).json({ error: error.message })
+	}
+}
 
-module.exports = { loginUser, signupUser }
+module.exports = { loginUser, signupUser, updateUser }
