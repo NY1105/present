@@ -14,7 +14,10 @@ app.use((req, res, next) => {
 
 app.use(
 	cors({
-		origin: 'https://nicholasyan.site',
+		origin:
+			process.env.NODE_ENV == 'PRODUCTION'
+				? 'https://nicholasyan.site'
+				: 'http://localhost:3000',
 		optionsSuccessStatus: 200,
 	})
 )
