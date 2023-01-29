@@ -1,7 +1,7 @@
 
 # mern-project-showcase-crud-app
 
-**My Website: https://nicholasyan.site/**
+**My Website: [https://nicholasyan.site/](https://nicholasyan.site/)**
 
 ![Preview](https://raw.githubusercontent.com/NY1105/present/main/frontend/public/img/Preview.png)
 
