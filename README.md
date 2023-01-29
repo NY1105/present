@@ -2,7 +2,8 @@
 # mern-project-showcase-crud-app
 
 **My Website: https://nicholasyan.site/**
-![Preview](https://raw.githubusercontent.com/NY1105/present/main/frontend/public/Preview.png)
+
+![Preview](https://raw.githubusercontent.com/NY1105/present/main/frontend/public/img/Preview.png)
 
 > This app was built to showcase the skills I have learnt from [the tutorial by TheNetNinja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE)
 
