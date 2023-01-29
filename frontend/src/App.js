@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Tags from './pages/Tags'
 import About from './pages/About'
+import Me from './pages/Me'
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 						<Route path="/" element={<Home />} />
 						<Route path="/tags" element={<Tags />} />
 						<Route path="/about" element={<About />} />
+						<Route path="/me" element={<Me />} />
 						<Route
 							path="*"
 							element={

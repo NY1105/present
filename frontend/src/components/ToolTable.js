@@ -56,6 +56,12 @@ const ToolsTable = ({ data, isLoading }) => {
 		if (!user) {
 			return
 		}
+		const getRes = await (
+			await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/tools/` + id, {
+				method: 'GET',
+			})
+		).json()
+		dispatch({ type: 'DELETE_TOOL', payload: getRes })
 		const response = await fetch(
 			`${process.env.REACT_APP_API_ENDPOINT}/api/tools/` + id,
 			{
@@ -67,7 +73,8 @@ const ToolsTable = ({ data, isLoading }) => {
 		)
 		const json = await response.json()
 		if (response.ok) {
-			dispatch({ type: 'DELETE_TOOL', payload: json })
+			console.log(json)
+			// 	dispatch({ type: 'DELETE_TOOL', payload: json })
 		}
 	}
 	const handleDeleteRow = useCallback(
@@ -142,7 +149,7 @@ const ToolsTable = ({ data, isLoading }) => {
 			)}
 			renderTopToolbarCustomActions={() => (
 				<Box>
-					<h1>Tools that I used to build this website:</h1>
+					<h2>Tools that I used to build this website:</h2>
 				</Box>
 			)}
 		/>
