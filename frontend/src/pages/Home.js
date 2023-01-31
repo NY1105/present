@@ -4,14 +4,15 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import ToolTableProvider from '../components/ToolTable'
 import Panel from '../components/Panel'
 
-
 const Home = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const { tools, dispatch } = useToolsContext()
 	const { user } = useAuthContext()
 
 	const fetchData = async () => {
-		const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/tools`)
+		const response = await fetch(
+			`${process.env.REACT_APP_API_ENDPOINT}/mern/tools`
+		)
 		const json = await response.json()
 
 		if (response.ok) {
@@ -27,7 +28,7 @@ const Home = () => {
 
 	return (
 		<div className="home">
-			<ToolTableProvider data={tools} isLoading={isLoading}/>
+			<ToolTableProvider data={tools} isLoading={isLoading} />
 			<Panel />
 		</div>
 	)

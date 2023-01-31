@@ -22,8 +22,8 @@ app.use(
 	})
 )
 app.use(express.json())
-app.use('/api/user/', usersRoutes)
-app.use('/api/tools/', toolsRoutes)
+app.use('/mern/user/', usersRoutes)
+app.use('/mern/tools/', toolsRoutes)
 
 mongoose.set('strictQuery', false)
 mongoose

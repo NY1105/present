@@ -57,13 +57,13 @@ const ToolsTable = ({ data, isLoading }) => {
 			return
 		}
 		const getRes = await (
-			await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/tools/` + id, {
+			await fetch(`${process.env.REACT_APP_API_ENDPOINT}/mern/tools/` + id, {
 				method: 'GET',
 			})
 		).json()
 		dispatch({ type: 'DELETE_TOOL', payload: getRes })
 		const response = await fetch(
-			`${process.env.REACT_APP_API_ENDPOINT}/api/tools/` + id,
+			`${process.env.REACT_APP_API_ENDPOINT}/mern/tools/` + id,
 			{
 				method: 'DELETE',
 				headers: {

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
@@ -9,7 +9,7 @@ import Me from './pages/Me'
 function App() {
 	return (
 		<div className="App">
-			<BrowserRouter>
+			<BrowserRouter basename={'/mern'}>
 				<Navbar />
 				<div className="pages">
 					<Routes>
