@@ -56,14 +56,9 @@ const ToolsTable = ({ data, isLoading }) => {
 		if (!user) {
 			return
 		}
-		const getRes = await (
-			await fetch(`${process.env.REACT_APP_API_ENDPOINT}/mern/tools/` + id, {
-				method: 'GET',
-			})
-		).json()
-		dispatch({ type: 'DELETE_TOOL', payload: getRes })
+
 		const response = await fetch(
-			`${process.env.REACT_APP_API_ENDPOINT}/mern/tools/` + id,
+			`${process.env.REACT_APP_API_ENDPOINT}/tools/` + id,
 			{
 				method: 'DELETE',
 				headers: {
@@ -72,9 +67,10 @@ const ToolsTable = ({ data, isLoading }) => {
 			}
 		)
 		const json = await response.json()
+		dispatch({ type: 'DELETE_TOOL', payload: json })
 		if (response.ok) {
 			console.log(json)
-			// 	dispatch({ type: 'DELETE_TOOL', payload: json })
+			// dispatch({ type: 'DELETE_TOOL', payload: json })
 		}
 	}
 	const handleDeleteRow = useCallback(

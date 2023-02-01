@@ -10,9 +10,7 @@ const Home = () => {
 	const { user } = useAuthContext()
 
 	const fetchData = async () => {
-		const response = await fetch(
-			`${process.env.REACT_APP_API_ENDPOINT}/mern/tools`
-		)
+		const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/tools`)
 		const json = await response.json()
 
 		if (response.ok) {

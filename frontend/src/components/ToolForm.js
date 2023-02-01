@@ -40,7 +40,7 @@ const ToolForm = () => {
 		}
 
 		const response = await fetch(
-			`${process.env.REACT_APP_API_ENDPOINT}/mern/tools/`,
+			`${process.env.REACT_APP_API_ENDPOINT}/tools/`,
 			{
 				method: 'POST',
 				body: JSON.stringify(tool),

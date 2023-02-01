@@ -49,14 +49,14 @@ const createTool = async (req, res) => {
 const deleteTool = async (req, res) => {
 	const user_id = req.user._id
 	const role = await User.findOne(user_id).select('role')
-	if (role.role !== 'admin') {
-		return res.status(401).json({ error: 'Unauthorized' })
-	}
 	const { id } = req.params
+	const tool = await Tool.findOneAndDelete({ _id: id })
+	if (role.role !== 'admin') {
+		return res.status(401).json({ tool, error: 'Unauthorized' })
+	}
 	if (!mongoose.Types.ObjectId.isValid(id)) {
 		return res.status(404).json({ error: 'No such tool' })
 	}
-	const tool = await Tool.findOneAndDelete({ _id: id })
 	if (!tool) {
 		return res.status(404).json({ error: 'No such tool' })
 	}
