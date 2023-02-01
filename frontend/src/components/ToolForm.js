@@ -39,14 +39,17 @@ const ToolForm = () => {
 			nSaved,
 		}
 
-		const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/tools/`, {
-			method: 'POST',
-			body: JSON.stringify(tool),
-			headers: {
-				'Content-type': 'application/json',
-				Authorization: `Bearer ${user.token}`,
-			},
-		})
+		const response = await fetch(
+			`${process.env.REACT_APP_API_ENDPOINT}/tools/`,
+			{
+				method: 'POST',
+				body: JSON.stringify(tool),
+				headers: {
+					'Content-type': 'application/json',
+					Authorization: `Bearer ${user.token}`,
+				},
+			}
+		)
 		const json = await response.json()
 
 		if (!response.ok) {
