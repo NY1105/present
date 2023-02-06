@@ -1,0 +1,233 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=VT323&display=swap');
+
+
+
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+body {
+  /* background: #f1f1f1; */
+  background: #353637;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+header {
+  background: #fff;
+  background: #656565;
+
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+
+.tool-preview {
+  background: #fff;
+  background: #656565;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.tool-preview h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+
+.tool-preview p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+  color: #000;
+}
+
+.tool-preview span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  color: #333;
+  border-radius: 50%;
+} 
+
+label, input {
+  display: block; 
+}
+input{
+  background: #656565;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button{
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline;
+  margin: 0 auto;
+}
+
+div.error{
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+  font-size: large;
+  text-decoration: underline;
+}
+nav a {
+  margin-left: 15px;
+}
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: poppins;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+}
+/* auth forms */
+form.signup, form.login, form.create {
+  max-width: 400px;
+  margin: 40px ;
+  margin-left: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+div.action {
+  max-width: 400px;
+  margin: 40px ;
+  margin-left: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.buttons {
+  margin: 0 auto;
+  margin-right: 20px;
+  display: inline;
+}
+
+div.action button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline;
+  margin: 0 auto;
+}
+
+div.action button.logout {
+  background: var(--error);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline;
+  margin: 0 auto;
+}
+
+div.action button.link {
+  background:none;
+  border:none; 
+  color: #000;
+  text-decoration: underline;
+  font-size: medium;
+}
+
+div.readme {
+  margin: 40px ;
+  margin-left: 20px;
+  padding: 20px;
+  background: #656565;
+  border-radius: 4px;
+}
+
+
+.react-pdf__Page__canvas {
+  display: flex;
+  margin: 0 auto;
+}
+
+.react-pdf__Document {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-pdf__Page__textContent {
+  visibility: hidden !important;
+}
+
+.pdf-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
