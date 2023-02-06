@@ -1,4 +1,3 @@
-import React, { Link } from 'react'
 import Pdf from '../components/pdf'
 import cvPDF from '../cv.pdf'
 

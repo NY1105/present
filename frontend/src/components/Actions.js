@@ -20,7 +20,7 @@ const Actions = () => {
 			<div>
 				<button onClick={handleGoto} className="link">Add a new Tool</button>
 			</div>
-			<button className="logout" onClick={handleLogout}>
+			<button className="button-logout" onClick={handleLogout}>
 				Logout
 			</button>
 		</div>
