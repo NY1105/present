@@ -4,7 +4,6 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import ToolTableProvider from '../components/ToolTable'
 import Panel from '../components/Panel'
 
-
 const Home = () => {
 	const [isLoading, setIsLoading] = useState(true)
 	const { tools, dispatch } = useToolsContext()
@@ -27,7 +26,7 @@ const Home = () => {
 
 	return (
 		<div className="home">
-			<ToolTableProvider data={tools} isLoading={isLoading}/>
+			<ToolTableProvider data={tools} isLoading={isLoading} />
 			<Panel />
 		</div>
 	)

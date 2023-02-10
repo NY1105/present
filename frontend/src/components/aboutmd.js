@@ -13,7 +13,7 @@ const AboutMD = () => {
 	}, [])
 
 	return (
-		<div className="readme">
+		<div className="read-me">
 			<ReactMarkdown children={content.md} />
 		</div>
 	)
