@@ -17,7 +17,6 @@ body {
 
 header {
   background: #fff;
-  background: #656565;
 
 }
 
@@ -48,8 +47,6 @@ header a {
 }
 
 .tool-preview {
-  background: #fff;
-  background: #656565;
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
