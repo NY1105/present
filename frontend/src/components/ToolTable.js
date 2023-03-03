@@ -5,6 +5,7 @@ import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 const ToolsTable = ({ data, isLoading }) => {
+
 	const [tableData, setTableData] = useState(() => data)
 	const columns = useMemo(
 		() => [

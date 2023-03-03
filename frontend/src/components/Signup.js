@@ -16,38 +16,42 @@ const Signup = () => {
 	}
 
 	const handleGoto = () => {
-		panelDispatch({ type: 'LOGIN_PANEL' })
+		// panelDispatch({ type: 'LOGIN_PANEL' })
+		panelDispatch({ type: 'TABLE_PANEL' })
 	}
 
 	return (
-		<form className="signup" onSubmit={handleSubmit}>
-			<h3>Sign Up</h3>
-			<div align="right">
-				<Link align="right" to="/" onClick={handleGoto}>
-					Log In
-				</Link>
-			</div>
-			<label>Email:</label>
-			<input
-				type="email"
-				onChange={(e) => setEmail(e.target.value)}
-				value={email}
-			/>
-			<label>Username:</label>
-			<input
-				type="username"
-				onChange={(e) => setUsername(e.target.value)}
-				value={username}
-			/>
-			<label>Password:</label>
-			<input
-				type="password"
-				onChange={(e) => setPassword(e.target.value)}
-				value={password}
-			/>
-			<button disabled={isLoading}>Sign Up</button>
-			{error && <div className="error">{error}</div>}
-		</form>
+		<div className='div-loginsignupcreate'>
+			<form className="signup" onSubmit={handleSubmit}>
+				<h3>Sign Up</h3>
+				<div align="right">
+					<Link align="right" to="/" onClick={handleGoto}>
+						{/* Log In */}
+						Back
+					</Link>
+				</div>
+				<label>Email:</label>
+				<input
+					type="email"
+					onChange={(e) => setEmail(e.target.value)}
+					value={email}
+				/>
+				<label>Username:</label>
+				<input
+					type="username"
+					onChange={(e) => setUsername(e.target.value)}
+					value={username}
+				/>
+				<label>Password:</label>
+				<input
+					type="password"
+					onChange={(e) => setPassword(e.target.value)}
+					value={password}
+				/>
+				<button disabled={isLoading}>Sign Up</button>
+				{error && <div className="error">{error}</div>}
+			</form>
+		</div>
 	)
 }
 

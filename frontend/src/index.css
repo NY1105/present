@@ -42,7 +42,7 @@ header a {
 
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  /* grid-template-columns: 3fr 1fr; */
   gap: 100px;
 }
 
@@ -142,17 +142,14 @@ nav button {
 form.signup, form.login, form.create {
   max-width: 400px;
   margin: 40px ;
-  margin-left: 20px;
   padding: 20px;
   background: #fff;
   border-radius: 4px;
 }
 
 div.action {
-  max-width: 400px;
   margin: 40px ;
-  margin-left: 20px;
-  padding: 20px;
+  padding: 40px;
   background: #fff;
   border-radius: 4px;
 }
@@ -226,4 +223,53 @@ div.readme {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.div-user-buttons{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.div-user-buttons Button{
+  margin-left: 5px;
+  background-color: #fff;
+}
+
+.div-user-display{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.div-user-display Button{
+  margin-left: 5px;
+}
+
+.user-display {
+  background-color: #fff;
+  padding: 3px;
+  color: #000;
+  border-radius: 4px;
+  height: 25px;
+}
+
+.div-loginsignupcreate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.div-actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+form.signup, form.login, form.create input{
+  width: 300px;
 }

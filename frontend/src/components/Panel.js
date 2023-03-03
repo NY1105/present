@@ -2,24 +2,40 @@ import Login from './Login'
 import Signup from './Signup'
 import Actions from './Actions'
 import ToolForm from './ToolForm'
-import { useEffect } from 'react'
+import ToolTableProvider from './ToolTable'
+import { useEffect, useState } from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
 import { usePanelContext } from '../hooks/usePanelContext'
+import { useToolsContext } from '../hooks/useToolsContext'
 
-export const Panel = () => {
+export const Panel = ({ data, isloading }) => {
 	const { page, dispatch } = usePanelContext()
 	const { user } = useAuthContext()
 
 	useEffect(() => {
-		if (user) {
-			dispatch({ type: 'ACTIONS_PANEL' })
-		}
-		if (!user) {
-			dispatch({ type: 'LOGIN_PANEL' })
-		}
+		dispatch({ type: 'TABLE_PANEL' })
 	}, [dispatch, user])
 
+	const [isLoading, setIsLoading] = useState(true)
+	const { tools, toolsdispatch } = useToolsContext()
+	const fetchData = async () => {
+		const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/tools`)
+		const json = await response.json()
+
+		if (response.ok) {
+			dispatch({ type: 'SET_TOOLS', payload: json })
+		}
+	}
+
+	useEffect(() => {
+		setIsLoading(true)
+		fetchData()
+		setIsLoading(false)
+	}, [toolsdispatch, user])
+
 	switch (page) {
+		case 'Table':
+			return <ToolTableProvider data={tools} isLoading={isLoading} />
 		case 'Signup':
 			return <Signup />
 		case 'Login':

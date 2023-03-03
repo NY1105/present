@@ -4,6 +4,10 @@ export const PanelContext = createContext()
 
 export const PanelReducer = (state, action) => {
 	switch (action.type) {
+		case 'TABLE_PANEL':
+			return {
+				page: 'Table'
+			}
 		case 'LOGIN_PANEL':
 			return {
 				page: 'Login',
@@ -27,7 +31,7 @@ export const PanelReducer = (state, action) => {
 
 export const PanelContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(PanelReducer, {
-		page: 'Login',
+		page: 'Table',
 	})
 
 	return (

@@ -15,39 +15,51 @@ const Login = () => {
 	}
 
 	const handleGoto = () => {
-		panelDispatch({ type: 'SIGNUP_PANEL' })
+		// panelDispatch({ type: 'SIGNUP_PANEL' })
+		panelDispatch({ type: 'TABLE_PANEL' })
 	}
 
 	return (
-		<form className="login" onSubmit={handleSubmit}>
-			<h3>Log In</h3>
+		<div className='div-loginsignupcreate'>
+			<form className="login" onSubmit={handleSubmit}>
+				<h3>Log In</h3>
 
-			<div align="right">
-				<Link align="right" to="/" onClick={handleGoto}>
-					Sign Up
-				</Link>
-			</div>
+				<div align="right">
+					<Link align="right" to="/" onClick={handleGoto}>
+						{/* Sign Up */}
+						Back
+					</Link>
+				</div>
 
-			<label>Email:</label>
-			<input
-				type="email"
-				onChange={(e) => setEmail(e.target.value)}
-				value={email}
-			/>
-			<label>Password:</label>
-			<input
-				type="password"
-				onChange={(e) => setPassword(e.target.value)}
-				value={password}
-			/>
+				<label>Email:</label>
+				<input
+					type="email"
+					onChange={(e) => setEmail(e.target.value)}
+					value={email}
+				/>
+				<label>Password:</label>
+				<input
+					type="password"
+					onChange={(e) => setPassword(e.target.value)}
+					value={password}
+				/>
 
-			<button className="buttons" disabled={isLoading}>
-				Log In
-			</button>
-			<button onClick={()=> {setEmail("guest@example.com");setPassword("Guest0!!")}} disabled={isLoading}>Log In as Guest</button>
+				<button className="buttons" disabled={isLoading}>
+					Log In
+				</button>
+				<button
+					onClick={() => {
+						setEmail('guest@example.com')
+						setPassword('Guest0!!')
+					}}
+					disabled={isLoading}
+				>
+					Log In as Guest
+				</button>
 
-			{error && <div className="error">{error}</div>}
-		</form>
+				{error && <div className="error">{error}</div>}
+			</form>
+		</div>
 	)
 }
 

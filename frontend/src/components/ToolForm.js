@@ -77,54 +77,56 @@ const ToolForm = () => {
 	}
 
 	return (
-		<form className="create" onSubmit={handleSubmit}>
-			<div align="right">
-				<Link align="right" to="/" onClick={handleGoBack}>
-					Back
-				</Link>
-			</div>
+		<div className='div-loginsignupcreate'>
+			<form className="create" onSubmit={handleSubmit}>
+				<div align="right">
+					<Link align="right" to="/" onClick={handleGoBack}>
+						Back
+					</Link>
+				</div>
 
-			<h3>Add a new Tool</h3>
+				<h3>Add a new Tool</h3>
 
-			<label>AppName: </label>
-			<input
-				type="text"
-				onChange={(e) => setAppName(e.target.value)}
-				value={appName}
-				className={emptyFields.includes('appName') ? 'error' : ''}
-			/>
+				<label>AppName: </label>
+				<input
+					type="text"
+					onChange={(e) => setAppName(e.target.value)}
+					value={appName}
+					className={emptyFields.includes('appName') ? 'error' : ''}
+				/>
 
-			<label>Provider: </label>
-			<input
-				type="text"
-				onChange={(e) => setAppProviderName(e.target.value)}
-				value={appProviderName}
-			/>
+				<label>Provider: </label>
+				<input
+					type="text"
+					onChange={(e) => setAppProviderName(e.target.value)}
+					value={appProviderName}
+				/>
 
-			<label>appOfficialSiteURL: </label>
-			<input
-				type="text"
-				onChange={(e) => setAppOfficialSiteURL(e.target.value)}
-				value={appOfficialSiteURL}
-			/>
+				<label>appOfficialSiteURL: </label>
+				<input
+					type="text"
+					onChange={(e) => setAppOfficialSiteURL(e.target.value)}
+					value={appOfficialSiteURL}
+				/>
 
-			<label>appDescription: </label>
-			<input
-				type="text"
-				onChange={(e) => setAppDescription(e.target.value)}
-				value={appDescription}
-			/>
+				<label>appDescription: </label>
+				<input
+					type="text"
+					onChange={(e) => setAppDescription(e.target.value)}
+					value={appDescription}
+				/>
 
-			<label>appLogo: </label>
-			<input
-				type="text"
-				onChange={(e) => setAppLogo(e.target.value)}
-				value={appLogo}
-			/>
+				<label>appLogo: </label>
+				<input
+					type="text"
+					onChange={(e) => setAppLogo(e.target.value)}
+					value={appLogo}
+				/>
 
-			<button>Add Tool</button>
-			{error && <div className="error">{error}</div>}
-		</form>
+				<button>Add Tool</button>
+				{error && <div className="error">{error}</div>}
+			</form>
+		</div>
 	)
 }
 
