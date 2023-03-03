@@ -1,16 +1,32 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ExternalLink } from 'react-external-link'
-
+import { Button } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
 const Navbar = () => {
+	const [width, setWidth] = useState(window.innerWidth)
+	useEffect(() => {
+		window.addEventListener('resize', () => {
+			setWidth(window.innerWidth)
+		})
+		return () => {
+			window.removeEventListener('resize', () => {
+				setWidth(window.innerWidth)
+			})
+		}
+	})
 	return (
 		<header>
-			<div className="container">
+			<div className="navbar">
 				<Link to="/">
-					{/* TODO: Add app icon */}
-					<h1>Project Showcase: Tools Management Site</h1>
+					{width >= 1050 ? (
+						<h2>Project Showcase: Tools Management Site</h2>
+					) : (
+						<></>
+					)}
 				</Link>
 				<nav>
-					<div>
+					<div className="div-navbuttons">
 						<Link to="/">Home</Link>
 						{/* <Link to="/tags">Tags</Link> */}
 						<Link to="/about">About</Link>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Typography, svg } from '@mui/material'
+import { Button } from '@mui/material'
 import { usePanelContext } from '../hooks/usePanelContext'
 
 const OptionsUser = ({ user }) => {

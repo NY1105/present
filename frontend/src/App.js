@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
@@ -7,6 +7,7 @@ import About from './pages/About'
 import Me from './pages/Me'
 
 function App() {
+	
 	return (
 		<div className="App">
 			<BrowserRouter basename={'/mern'}>

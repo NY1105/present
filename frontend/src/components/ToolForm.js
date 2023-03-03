@@ -69,6 +69,7 @@ const ToolForm = () => {
 
 			console.log('new Tool added', json)
 			dispatch({ type: 'CREATE_TOOL', payload: json })
+			panelDispatch({ type: 'TABLE_PANEL' })
 		}
 	}
 

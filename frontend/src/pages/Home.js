@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useToolsContext } from '../hooks/useToolsContext'
 import { useAuthContext } from '../hooks/useAuthContext'
-import ToolTableProvider from '../components/ToolTable'
 import HomeInterface from '../components/HomeInterface'
-import Panel from '../components/Panel'
 
 const Home = () => {
 	const { user } = useAuthContext()
