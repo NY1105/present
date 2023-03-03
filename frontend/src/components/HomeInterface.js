@@ -1,11 +1,11 @@
 import UserOptions from './OptionsUser'
 import Panel from './Panel'
 
-const HomeInterface = ({ user, tools, isLoading }) => {
+const HomeInterface = ({ user }) => {
 	return (
 		<div>
-			<UserOptions user={user}  />
-			<Panel/>
+			<UserOptions user={user} />
+			<Panel />
 		</div>
 	)
 }

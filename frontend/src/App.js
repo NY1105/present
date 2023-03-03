@@ -7,7 +7,6 @@ import About from './pages/About'
 import Me from './pages/Me'
 
 function App() {
-	
 	return (
 		<div className="App">
 			<BrowserRouter basename={'/mern'}>

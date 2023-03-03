@@ -78,7 +78,7 @@ const ToolForm = () => {
 	}
 
 	return (
-		<div className='div-loginsignupcreate'>
+		<div className="div-loginsignupcreate">
 			<form className="create" onSubmit={handleSubmit}>
 				<div align="right">
 					<Link align="right" to="/" onClick={handleGoBack}>

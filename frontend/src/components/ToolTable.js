@@ -106,11 +106,11 @@ const ToolsTable = ({ data, isLoading }) => {
 		[tableData]
 	)
 	return (
-		<div className={width>=1050?"div-MRT":"div-MRT-shift"}>
+		<div className={width >= 1050 ? 'div-MRT' : 'div-MRT-shift'}>
 			<MaterialReactTable
 				columns={columns}
 				data={data ?? []}
-				enableExpanding = {width >= 1050}
+				enableExpanding={width >= 1050}
 				globalFilterFn="contains"
 				enableColumnActions={false}
 				enableHiding={false}
@@ -144,7 +144,7 @@ const ToolsTable = ({ data, isLoading }) => {
 						},
 					},
 					{ showGlobalFilter: true },
-					{ columnVisibility: { appDescription: (width>=1050) } })
+					{ columnVisibility: { appDescription: width >= 1050 } })
 				}
 				renderDetailPanel={({ row }) => (
 					<Box

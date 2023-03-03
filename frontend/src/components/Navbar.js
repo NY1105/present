@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ExternalLink } from 'react-external-link'
-import { Button } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
 const Navbar = () => {
 	const [width, setWidth] = useState(window.innerWidth)
 	useEffect(() => {
@@ -22,7 +20,7 @@ const Navbar = () => {
 					{width >= 1050 ? (
 						<h2>Project Showcase: Tools Management Site</h2>
 					) : (
-						<></>
+						<div></div>
 					)}
 				</Link>
 				<nav>

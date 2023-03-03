@@ -25,7 +25,7 @@ const Home = () => {
 
 	return (
 		<div className="home">
-			<HomeInterface user={user} tools={tools} isLoading={isLoading}/>
+			<HomeInterface user={user} />
 		</div>
 	)
 }

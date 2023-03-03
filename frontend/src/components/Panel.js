@@ -8,7 +8,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 import { usePanelContext } from '../hooks/usePanelContext'
 import { useToolsContext } from '../hooks/useToolsContext'
 
-export const Panel = ({ data, isloading }) => {
+export const Panel = () => {
 	const { page, dispatch } = usePanelContext()
 	const { user } = useAuthContext()
 

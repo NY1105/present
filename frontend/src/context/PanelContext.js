@@ -6,7 +6,7 @@ export const PanelReducer = (state, action) => {
 	switch (action.type) {
 		case 'TABLE_PANEL':
 			return {
-				page: 'Table'
+				page: 'Table',
 			}
 		case 'LOGIN_PANEL':
 			return {
@@ -22,7 +22,7 @@ export const PanelReducer = (state, action) => {
 			}
 		case 'FORM_PANEL':
 			return {
-				page: 'ToolForm'
+				page: 'ToolForm',
 			}
 		default:
 			return state
