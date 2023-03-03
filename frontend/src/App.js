@@ -9,7 +9,7 @@ import Me from './pages/Me'
 function App() {
 	return (
 		<div className="App">
-			<BrowserRouter basename={'/mern'}>
+			<BrowserRouter>
 				<Navbar />
 				<div className="pages">
 					<Routes>
