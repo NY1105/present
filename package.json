@@ -1,0 +1,8 @@
+{
+  "name": "present",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd refrontend && npm run dev"
+  }
+}
