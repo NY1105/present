@@ -1,0 +1,39 @@
+{
+	"projects": [
+		{
+			"id": 1,
+			"title": "NLP Personality Prediction",
+			"description": "This is the first project",
+			"url": "https://www.google.com",
+			"image": ""
+		},
+		{
+			"id": 2,
+			"title": "Next.js + Tailwindcss",
+			"description": "This is the first project.",
+			"url": "https://www.google.com",
+			"image": ""
+		},
+		{
+			"id": 3,
+			"title": "MERN Stack Project",
+			"description": "This is the first project",
+			"url": "https://www.google.com",
+			"image": ""
+		},
+		{
+			"id": 4,
+			"title": "NEAT Forex Trading",
+			"description": "This is the first project",
+			"url": "https://www.google.com",
+			"image": ""
+		},
+		{
+			"id": 5,
+			"title": "Django Backtesting",
+			"description": "This is the first project",
+			"url": "https://www.google.com",
+			"image": ""
+		}
+	]
+}

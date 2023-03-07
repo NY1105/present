@@ -1,12 +1,23 @@
+import ProjectData from '@/data/projects.json'
+import RenderProjects from '@/components/RenderProjects'
+import RenderIntro from '@/components/RenderIntro'
+import RenderEducation from '@/components/RenderEducation'
+import RenderExperience from '@/components/RenderExperience'
+
 export default function Home() {
+	const projects = ProjectData.projects
 	return (
-		<>
+		<div className="my-4 py-4 ">
+			<div className="md:flex">
+				<RenderIntro />
+				<RenderProjects projects={projects} />
+			</div>
 			<div className="">
-				<div className=" py-2 px-4 rounded-md border-2 border-gray-200 bg-gray-200 dark:border-gray-900 dark:bg-gray-900">
-					<p>Hi I'm NY. Nice to meet you.</p>
-					<p>Here are some coding projects I have done.</p>
+				<div className="sm:grid sm:grid-cols-2">
+					<RenderEducation />
+					<RenderExperience />
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }

@@ -44,7 +44,7 @@ const Navbar = () => {
 		{ label: 'Contact', link: '/contact' },
 	]
 	return (
-		<div className="pt-4 px-12 md:px-40 justify-center sm:justify-start flex dark:bg-gray-800 bg-white dark:text-white text-black items-center">
+		<nav className="px-6 sm:px-12 md:px-16 lg:px-20 py-4 fixed w-full justify-center sm:justify-start flex drop-shadow-md dark:bg-gray-800 bg-white dark:text-white text-black items-center">
 			<div
 				className="px-2 hover:cursor-pointer"
 				onClick={() => {
@@ -77,7 +77,7 @@ const Navbar = () => {
 			<div className="items-center justify-center hover:cursor-pointer rounded-md dark:hover:bg-gray-700 light:hover:bg-gray-200 p-1">
 				{renderThemeChanger()}
 			</div>
-		</div>
+		</nav>
 	)
 }
 
