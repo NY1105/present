@@ -44,7 +44,7 @@ const Navbar = () => {
 		{ label: 'Contact', link: '/contact' },
 	]
 	return (
-		<div className="py-2 px-12 justify-center sm:justify-start flex dark:bg-gray-800 bg-white dark:text-white text-black items-center">
+		<div className="pt-4 px-12 md:px-40 justify-center sm:justify-start flex dark:bg-gray-800 bg-white dark:text-white text-black items-center">
 			<div
 				className="px-2 hover:cursor-pointer"
 				onClick={() => {
