@@ -14,6 +14,7 @@ const RenderProjects = ({ projects }: Projects) => {
 						title={project.title}
 						description={project.description}
 						url={project.url}
+						image={project.image}
 					/>
 				))}
 			</div>

@@ -14,8 +14,8 @@ export default function Home() {
 			</div>
 			<div className="">
 				<div className="sm:grid sm:grid-cols-2">
-					<RenderEducation />
 					<RenderExperience />
+					<RenderEducation />
 				</div>
 			</div>
 		</div>

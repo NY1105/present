@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const RenderExperience = () => {
@@ -7,15 +8,23 @@ const RenderExperience = () => {
 			<div className="pb-3 flex justify-center ">
 				<div className=" flex justify-center ">
 					<div className="mr-2 p-1">
-						<img src="/cityu.svg" alt="cityu" className="h-12 md:h-20"></img>
+						<img
+							src="/ff.png"
+							alt="cityu"
+							className="h-12 md:h-20 hover:cursor-pointer"
+							onClick={() => window.open('https://forexforest.net/')}
+						></img>
 					</div>
 					<div className="flex-1 flex flex-col justify-center mx-1 grow">
 						<p className="font-semibold md:text-lg lg:text-xl">
 							Junior Software Developer
 						</p>
-						<p className="text-gray-900 text-sm md:text-md lg:text-lg dark:text-gray-100">
-							Forest Forex Algorithmic Trading
-						</p>
+						<Link
+							href="https://forexforest.net/"
+							className="text-gray-900 text-sm md:text-md lg:text-lg dark:text-gray-100 hover:cursor-pointer"
+						>
+							Forex Forest Algorithmic Trading
+						</Link>
 					</div>
 				</div>
 			</div>

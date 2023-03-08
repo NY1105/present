@@ -1,8 +1,9 @@
 export type Project = {
 	id: number
 	title: string
-	description: string
+	description: string[]
 	url: string
+	image: string
 }
 
 export type Projects = { projects: Project[] }

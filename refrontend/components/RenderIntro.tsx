@@ -10,9 +10,9 @@ const RenderIntro = () => {
 					I'm <span className="font-semibold">Nicholas</span>
 				</p>
 				<br />
-				<p className="text-lg">Nice to meet you</p>
-				<p className="text-lg">Here are some coding projects I have done</p>
-				<p className="text-lg">Feel free to take a tour!</p>
+				<p className="lg:text-lg">Nice to meet you</p>
+				<p className="lg:text-lg">Here are some coding projects I have done</p>
+				<p className="lg:text-lg">Feel free to take a tour!</p>
 			</div>
 		</div>
 	)
