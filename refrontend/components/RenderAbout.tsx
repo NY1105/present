@@ -29,9 +29,9 @@ const RenderAbout = () => {
 
 			<div className="flex justify-center flex-col">
 				<div className="pb-3 px-4 flex flex-col ">
-					<p className="text-sm">Here are the frameworks and tools I used writing this website</p>
+					<p className="text-sm md:text-lg lg:text-xl">Here are the frameworks and tools I used writing this website</p>
 				</div>
-				<div className="pb-3 grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 justify-center items-stretch">
+				<div className="pb-3 grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-center items-stretch">
 					{tools &&
 						tools.map((tool) => (
 							<div

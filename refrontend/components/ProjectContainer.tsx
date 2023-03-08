@@ -10,7 +10,11 @@ export default (props: Project) => {
 			<div className="flex-1 flex flex-col mx-4 justify-center">
 				<p className="hidden">{id}</p>
 				<p className="text-lg font-semibold sm:text-xl md:pt-1">{title}</p>
-				<p className="hidden lg:block text-base ml-6">{description.map((line)=><p>{line}</p>)}</p>
+				<div className="hidden lg:block text-base ml-6">
+					{description.map((line) => (
+						<div key={line}>{line}</div>
+					))}
+				</div>
 				<p className="hidden text-base">{url}</p>
 			</div>
 		</div>
