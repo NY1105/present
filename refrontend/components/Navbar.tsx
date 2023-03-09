@@ -17,7 +17,7 @@ const Navbar = () => {
 			return (
 				<img
 					className="m-1 object-scale-down h-6"
-					src="./moon.svg"
+					src="/moon.svg"
 					alt="moon"
 					onClick={() => {
 						setTheme('dark')
@@ -28,7 +28,7 @@ const Navbar = () => {
 			return (
 				<img
 					className="m-1 object-scale-down h-6"
-					src="./sun.svg"
+					src="/sun.svg"
 					alt="sun"
 					onClick={() => {
 						setTheme('light')
@@ -39,7 +39,8 @@ const Navbar = () => {
 	}
 	let router = useRouter()
 	const buttons = [
-		{ label: 'Home', link: '/' },
+		// { label: 'Home', link: '/' },
+		{ label: 'Projects', link: '/projects' },
 		{ label: 'About', link: '/about' },
 		{ label: 'Contact', link: '/contact' },
 	]
@@ -51,7 +52,7 @@ const Navbar = () => {
 					router.push('/')
 				}}
 			>
-				<img className="object-scale-down h-8 " alt="kb" src="./kb.svg"></img>
+				<img className="object-scale-down h-8 " alt="kb" src="/kb.svg"></img>
 			</div>
 			<div
 				className="px-2 hidden dark:text-gray-300 text-gray-700 sm:flex text-xl hover:cursor-pointer dark:hover:text-white hover:text-black"

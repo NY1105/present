@@ -1,35 +1,16 @@
 import React, { useState } from 'react'
 import Tools from '@/data/tools.json'
+import RenderContainer from './RenderContainer'
 
 const RenderAbout = () => {
-	// const [tools, setTools] = useState([
-	// 	{
-	// 		_id: '',
-	// 		appName: '',
-	// 		appProviderName: '',
-	// 		appDescription: '',
-	// 		appOfficialSiteURL: '',
-	// 		appLogo: '',
-	// 		appTags: [],
-	// 		nSaved: 0,
-	// 		createdBy: '',
-	// 		createdAt: '',
-	// 		updatedAt: '',
-	// 	},
-	// ])
-	// fetch('https://api.nicholasyan.site/api/tools')
-	// 	.then((res) => res.json())
-	// 	.then((json) => {
-	// 		setTools(json)
-	// 	})
 	const tools = Tools
 	return (
-		<div className="m-1 py-3 px-5 rounded-md border-2 border-gray-400 bg-gray-200 dark:border-gray-700 dark:bg-gray-900">
-			<div className="text-2xl px-1 py-2">About</div>
-
+		<RenderContainer title="About">
 			<div className="flex justify-center flex-col">
 				<div className="pb-3 px-4 flex flex-col ">
-					<p className="text-sm md:text-lg lg:text-xl">Here are the frameworks and tools I used writing this website</p>
+					<p className="text-sm md:text-lg lg:text-xl">
+						Here are the frameworks and tools I used writing this website
+					</p>
 				</div>
 				<div className="pb-3 grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 justify-center items-stretch">
 					{tools &&
@@ -67,7 +48,7 @@ const RenderAbout = () => {
 						))}
 				</div>
 			</div>
-		</div>
+		</RenderContainer>
 	)
 }
 

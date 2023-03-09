@@ -1,23 +1,23 @@
-import { Project, Projects } from '@/utils/types'
+import router from 'next/router'
 import React from 'react'
-import ProjectContainer from './ProjectContainer'
+import ProjectsContainer from './ProjectsContainer'
 
-const RenderProjects = ({ projects }: Projects) => {
+const RenderProjects = () => {
 	return (
 		<div className="flex-1 m-1 py-2 px-4 rounded-md border-2 border-gray-400 bg-gray-200 dark:border-gray-700 dark:bg-gray-900">
-			<div className="text-2xl px-1 py-2">Projects</div>
-			<div className="pb-3 overflow-auto ">
-				{projects.map((project: Project) => (
-					<ProjectContainer
-						key={`${project}-${project.id}`}
-						id={project.id}
-						title={project.title}
-						description={project.description}
-						url={project.url}
-						image={project.image}
-					/>
-				))}
+			<div className="flex">
+				<div className="text-2xl px-1 py-2">Projects</div>
+				<div className="flex-1"></div>
+				<div
+					className="flex flex-col justify-center p-1 mx-4 my-2 bg-gray-400 rounded-md hover:cursor-pointer"
+					onClick={() => {
+						router.push('/projects')
+					}}
+				>
+					View All
+				</div>
 			</div>
+			<ProjectsContainer />
 		</div>
 	)
 }

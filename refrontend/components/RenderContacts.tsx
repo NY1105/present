@@ -1,76 +1,89 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
+import RenderContainer from './RenderContainer'
 
 const RenderContact = () => {
+	const router = useRouter()
+	const [copying, setCopying] = React.useState('')
 	const contacts = [
 		{
 			label: 'LinkedIn',
 			url: 'https://www.linkedin.com/in/nicholasyanwaiyin/',
 			image: '/linkedin.png',
+			function: () => {
+				window.open('https://www.linkedin.com/in/nicholasyanwaiyin/')
+			},
 		},
 		{
 			label: 'Github',
 			url: 'https://github.com/NY1105/',
 			image: '/github.png',
+			function: () => {
+				window.open('https://github.com/NY1105/')
+			},
 		},
 		{
 			label: 'Email',
 			url: 'https://yanwaiyin1105@gmail.com',
 			image: '/gmail.png',
+			function: () => {
+				navigator.clipboard.writeText('https://yanwaiyin1105@gmail.com')
+				setCopying('Email')
+			},
 		},
 	]
-	const [copying, setCopying] = React.useState('')
 	return (
-		<div className="m-1 py-3 px-5 rounded-md border-2 border-gray-400 bg-gray-200 dark:border-gray-700 dark:bg-gray-900">
-			<div className="text-2xl px-1 py-2">Contacts</div>
-			<div className="flex justify-center">
-				<div className="pb-3 flex flex-col justify-center ">
-					{contacts.map((contact) => (
-						<div
-							className="border-b-2 border-gray-300 dark:border-gray-800 pb-3 flex flex-col justify-center"
-							key={contact.label}
-						>
-							<div className=" flex justify-center my-1 py-1 ">
-								<div className="mr-2 p-1">
-									<img
-										src={contact.image}
-										alt="cityu"
-										className="w-12 md:w-20 hover:cursor-pointer bg-white rounded-xl"
-										onClick={() => window.open(contact.url)}
-									></img>
+		<RenderContainer title="Contact">
+			<div className="pb-3 flex flex-col justify-center ">
+				{contacts.map((contact) => (
+					<div
+						className="border-b-2 border-gray-300 dark:border-gray-800 pb-3 flex flex-col justify-center"
+						key={contact.label}
+					>
+						<div className=" flex justify-center my-1 py-1 ">
+							<div className="mx-2 p-1">
+								<img
+									src={contact.image}
+									alt={contact.label}
+									className="w-12 md:w-20 hover:cursor-pointer bg-white rounded-xl"
+									onClick={contact.function}
+								></img>
+							</div>
+							<div className=" flex flex-col justify-center mx-1 grow overflow-hidden hover:cursor-pointer">
+								<div
+									className="font-semibold md:text-lg lg:text-xl"
+									onClick={contact.function}
+								>
+									{contact.label}
 								</div>
-								<div className=" flex flex-col justify-center mx-1 grow overflow-hidden ">
-									<p className="font-semibold md:text-lg lg:text-xl">
-										<Link href={contact.url}>{contact.label}</Link>
-									</p>
-									<div className="flex max-h-6">
-										<Link
-											className="hidden sm:block text-gray-900 text-sm h-4 underline md:text-md lg:text-lg dark:text-gray-100"
-											href={contact.url}
-										>
-											{contact.url}
-										</Link>
-
-										<img
-											className={
-												contact.label == copying
-													? 'hidden sm:block w-6 m-0 ml-2 rounded-md p-1 bg-gray-200 dark:bg-gray-500 hover:bg-green-300 dark:hover:bg-green-800 hover:cursor-pointer'
-													: 'hidden sm:block w-6 m-0 ml-2 rounded-md p-1 bg-gray-200 dark:bg-gray-500 hover:bg-gray-300 dark:hover:bg-gray-800 hover:cursor-pointer'
-											}
-											src="./copy.svg"
-											onClick={() => {
-												navigator.clipboard.writeText(contact.url)
-												setCopying(contact.label)
-											}}
-										/>
+								<div className="flex max-h-6">
+									<div
+										className="hidden sm:block text-gray-900 text-sm h-4 underline md:text-md lg:text-lg dark:text-gray-100 hover:cursor-pointer"
+										onClick={contact.function}
+									>
+										{contact.url}
 									</div>
+
+									<img
+										className={
+											contact.label == copying
+												? 'hidden sm:block w-6 m-0 ml-2 rounded-md p-1 bg-green-300 hover:cursor-pointer'
+												: 'hidden sm:block w-6 m-0 ml-2 rounded-md p-1 bg-gray-200 dark:bg-gray-500 hover:bg-gray-300 dark:hover:bg-gray-800 hover:cursor-pointer'
+										}
+										src="./copy.svg"
+										onClick={() => {
+											navigator.clipboard.writeText(contact.url)
+											setCopying(contact.label)
+										}}
+									/>
 								</div>
 							</div>
 						</div>
-					))}
-				</div>
+					</div>
+				))}
 			</div>
-		</div>
+		</RenderContainer>
 	)
 }
 
