@@ -5,7 +5,7 @@ import RenderExperience from '@/components/RenderExperience'
 
 export default function Home() {
 	return (
-		<div className="my-4 py-4 ">
+		<div className="">
 			<div className="md:flex">
 				<RenderIntro />
 				<RenderProjects />

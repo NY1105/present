@@ -23,8 +23,8 @@ const RenderAbout = () => {
 									<div className="mr-2 p-1">
 										<img
 											src={tool.appLogo}
-											alt="cityu"
-											className="h-12 md:h-20 hover:cursor-pointer"
+											alt={tool.appName}
+											className="h-12 md:h-20 hover:cursor-pointer "
 											onClick={() => window.open(tool.appOfficialSiteURL)}
 										></img>
 									</div>

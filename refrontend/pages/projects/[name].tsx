@@ -13,9 +13,8 @@ const ProjectDetail = () => {
       {projects
         .filter((project: Project) => project.name === name)
         .map((project) => (
-          <div>
+          <div key={project.id}>
             <ProjectDetails
-              key={project.name}
               title={project.title}
               name={project.name}
               id={project.id}

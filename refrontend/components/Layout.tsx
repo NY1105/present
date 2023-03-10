@@ -8,7 +8,7 @@ const Layout = ({ children }: ComponentWithChildProps) => {
 				<Navbar />
 				<div
 					id="main-content"
-					className="flex-1 px-6 sm:px-12 md:px-16 lg:px-20"
+					className="flex-1 px-6 sm:px-12 md:px-16 lg:px-20 my-4 py-2 "
 				>
 					{children}
 				</div>

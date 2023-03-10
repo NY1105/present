@@ -8,7 +8,7 @@
 				"Developed an NLP prediction model with a dataset of essays, using bidirectional LSTM model on analyzing based on five-factor model of psychology.",
 				"Proposed a solution architecture utilizing SageMaker, Lex, Lambda and Serverless Application Model on Amazon Web Services. "
 			],
-			"url": "https://www.google.com",
+			"url": "https://github.com/NY1105/SHG_Hackathon_2023_ML",
 			"image": "/tensorflow.png"
 		},
 		{
@@ -18,7 +18,7 @@
 			"description": [
 				"Co-developed a website for rating headhunt agents, using Next.js, Tailwind CSS, and Redux."
 			],
-			"url": "https://www.google.com",
+			"url": "/",
 			"image": "/tailwind.png"
 		},
 		{
@@ -28,7 +28,7 @@
 			"description": [
 				"Built a complete environment on managing software tools with the MERN stack, deployed using cPanel."
 			],
-			"url": "https://www.google.com",
+			"url": "/",
 			"image": "/React.png"
 		},
 		{
@@ -38,7 +38,7 @@
 			"description": [
 				"Created artificial neural networks with NEAT algorithm for developing forex trading strategy."
 			],
-			"url": "https://www.google.com",
+			"url": "https://github.com/NY1105/NEAT-Forex-Trading",
 			"image": "/NEAT.png"
 		},
 		{
@@ -48,7 +48,7 @@
 			"description": [
 				"Developed a website interface for a backtesting tool, visualized the price data and the strategy analysis."
 			],
-			"url": "https://www.google.com",
+			"url": "https://github.com/NY1105/Backtester-with-Django",
 			"image": "/Django.png"
 		}
 	]
