@@ -70,7 +70,7 @@ const RenderContact = () => {
                         ? 'hidden sm:block w-6 m-0 ml-2 rounded-md p-1 bg-green-300 hover:cursor-pointer aspect-square'
                         : 'hidden sm:block w-6 m-0 ml-2 rounded-md p-1 bg-gray-200 dark:bg-gray-500 hover:bg-gray-300 dark:hover:bg-gray-800 hover:cursor-pointer aspect-square'
                     }
-                    src="./copy.svg"
+                    src="/utils/copy.svg"
                     onClick={() => {
                       navigator.clipboard.writeText(contact.url)
                       setCopying(contact.label)
