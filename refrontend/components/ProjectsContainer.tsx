@@ -15,7 +15,7 @@ const ProjectsContainer = () => {
           name={project.name}
           description={project.description}
           url={project.url}
-          image={`/projects/${project.image}`}
+          image={`/projects${project.image}`}
         />
       ))}
     </div>
