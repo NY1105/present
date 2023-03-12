@@ -16,7 +16,7 @@ export default ({ title, name, description, url, image }: Project) => {
       </div>
       <div className="flex-1 flex flex-col mx-2 justify-center">
         <p className="text-lg font-semibold sm:text-xl md:pt-1">{title}</p>
-        <div className="hidden lg:block text-base ml-6">
+        <div className="hidden lg:block text-base indent-8">
           {description.map((line) => (
             <div key={line}>{line}</div>
           ))}
